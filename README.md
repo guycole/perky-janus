@@ -7,7 +7,7 @@ This project is to share my experience using a [BeagleBone Black](https://beagle
 The deployment domain is a network of single board computers in a mobile application.  Little computers have terrible clock drift, so an external source was a priority.  I also needed location (because, mobile) so a GPS was mandatory.
 
 ## The Plan
-1. Purchase a GPS receiver w/PPS output (probably not USB)
+1. Purchase a GPS receiver w/PPS output (probably not a USB device)
 1. Flash a BeagleBone Black w/a fresh image
 1. Install software packages 
 1. Configure GPS and PPS
@@ -52,59 +52,17 @@ The GPS receiver will write ASCII messages to BeagleBone UART1, and send a sync 
 1. Assuming gpsd(8) started, try your luck with cgps(1).
 ![resultsl](https://github.com/guycole/perky-janus/blob/main/grafix/cgps.png)
 
-XOXOXOXO
+#### pps
+1. For reasons, pps will require you to install a device overlay.
+1. git clone https://github.com/RobertCNelson/bb.org-overlays.git
+1. Copy [BB-UART1-GPS-00A0.dts](https://github.com/guycole/perky-janus/blob/main/BB-UART1-GPS-00A0.dts) to bb.org-overlays/src/arm
+1. Install the overlays by invoking bb.org-overlays/install.sh
+1. Update /boot/uEnv.txt to reference the new overlay
+![uEnv.txtl](https://github.com/guycole/perky-janus/blob/main/grafix/uenv.png)
+1. Reboot
+1. Test for PPS success
+![ppstestl](https://github.com/guycole/perky-janus/blob/main/grafix/ppstest.png)
 
-## BeagleBone History
-Keep the below in mind while reading some of the older posts on about using GPS w/your BeagleBone.
+### Configure Time Server
 
-[Quote](https://elinux.org/Beagleboard:BeagleBoneBlack_Debian#U-Boot_Overlays)
-> Kernel Overlays are going bye-bye, too many bugs, too many race conditions, no kernel maintainers interested. We've said our farewells and U-Boot Overlays is the way forward: https://elinux.org/Beagleboard:BeagleBoneBlack_Debian#U-Boot_Overlays With multiple parties working on the U-Boot infrastructure. 
-
-
-https://www.kernel.org/doc/Documentation/pps/pps.txt
-
-pps_ldisc wants DCD change
-
-
-
-I have since learned that USB GPS receivers would not readily interface with ntpd(8) or chronyd(8), because the kernel driver needs PPS.  
-
-pps device?  for kernel?
-
-/dev/pps0 when gpsd starts
-
-cgps not working
-
-ppsteset /dev/pps0
-ppstest /dev/pps1 works... who created this device
-
-## Pins
-    | Header | Pin | Name      | Description       |
-    |--------|-----|-----------|-------------------|
-    | P8     |  1  | GPIO_99   | Widget Toggle     |
-    | P9     |  1  | DGND      | Ground            |
-    | P9     |  7  | SYS_5V    | GPS VIN           |
-    | P9     | 12  | GPIO_60   | GPS PPP           |
-    | P9     | 24  | UART1_TXD | GPS RX            |
-    | P9     | 26  | UART1_RXD | GPS TX            |
-
-I2C pins?
-
-Device Tree Overlay
-universal cape does not connect GPIO to kernel PPS driver.
-
-no /sys/devices/platform/bone_capemgr
-
-ls /sys/class/pps
-ls /sys/class/pps/pps0
-
-/dev/tty01 = UART1 = ttyS1
-
-pps0 says "/dev/ttyS1"
-modprobe pps-ktimer
-k, found 1 source(s), now start fetching data...
-time_pps_fetch() error -1 (Connection timed out)
-time_pps_fetch() error -1 (Connection timed out)
-
-/etc/default/gpsd
-
+Coming Soon
