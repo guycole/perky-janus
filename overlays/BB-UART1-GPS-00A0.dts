@@ -1,7 +1,9 @@
 /*
  *
- * Virtual cape for UART1 on connector pins P9.24 P9.26
- *
+ * Virtual cape for UART1 on connector pins P9.24 P9.26 w/PPS on P9.12
+ * 
+ * Based on this thread:
+ *   https://forum.beagleboard.org/t/beaglebone-black-gps-pps-and-chrony-for-time-sync/897/17
  */
 
 /dts-v1/;
