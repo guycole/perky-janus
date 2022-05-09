@@ -22,8 +22,8 @@ This [GPS Receiver](https://www.digikey.com/en/products/detail/adafruit-industri
 
 I used a [Digilent Digital Discovery](https://digilent.com/shop/digital-discovery-portable-usb-logic-analyzer-and-digital-pattern-generator/) to verify the GPS receiver was healthy.
 
-![GPS output](https://github.com/guycole/perky-janus/blob/main/grafix/uart_out.png)
-![PPS output](https://github.com/guycole/perky-janus/blob/main/grafix/pps_out.png)
+![GPS output](https://github.com/guycole/perky-janus/blob/main/grafix/uart_out2.png)
+![PPS output](https://github.com/guycole/perky-janus/blob/main/grafix/pps_out2.png)
 
 ### Install packages
 1. apt-get install gps
