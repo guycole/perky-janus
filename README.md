@@ -52,8 +52,6 @@ The GPS receiver will write ASCII messages to BeagleBone UART1, and send a sync 
 
 1. Assuming gpsd(8) started, try your luck with cgps(1).
 ![resultsl](https://github.com/guycole/perky-janus/blob/main/grafix/cgps.png)
-1. gpsmon(1) will demonstrate you have pps working
-![resultsl](https://github.com/guycole/perky-janus/blob/main/grafix/gpsmon.png)
 
 #### pps
 1. For reasons, pps will require you to install a device overlay.
@@ -65,6 +63,8 @@ The GPS receiver will write ASCII messages to BeagleBone UART1, and send a sync 
 1. Reboot
 1. Test for PPS success
 ![ppstestl](https://github.com/guycole/perky-janus/blob/main/grafix/ppstest.png)
+1. gpsmon(1) will demonstrate you have pps working
+![resultsl](https://github.com/guycole/perky-janus/blob/main/grafix/gpsmon.png)
 
 ### Configure Time Server
 
