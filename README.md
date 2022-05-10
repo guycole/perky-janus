@@ -65,12 +65,14 @@ The GPS receiver will write ASCII messages to BeagleBone UART1, and send a sync 
 ![ppstestl](https://github.com/guycole/perky-janus/blob/main/grafix/ppstest.png)
 1. gpsmon(1) will demonstrate you have pps working
 ![resultsl](https://github.com/guycole/perky-janus/blob/main/grafix/gpsmon.png)
+1. ntpshmmon(1) will also verify gpsd using PPS
+![resultsl](https://github.com/guycole/perky-janus/blob/main/grafix/ntpshmmon.png)
 
 ### Configure Time Server
 
 Coming Soon
 
-### Relevant Lins
+### Relevant Links
 [thread w/RCN](https://forum.beagleboard.org/t/beaglebone-black-gps-pps-and-chrony-for-time-sync/897/17)
 [overlays on elinux.org](https://elinux.org/Beagleboard:BeagleBoneBlack_Debian#U-Boot_Overlays)
 [pps on kernel.org](https://www.kernel.org/doc/html/latest/driver-api/pps.html)
