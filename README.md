@@ -21,8 +21,9 @@ I purchased several inexpensive USB GPS receivers via Amazon, which all delivere
 This [GPS Receiver](https://www.digikey.com/en/products/detail/adafruit-industries-llc/746/5353613?utm_adgroup=Essen%20Deinki&utm_source=google&utm_medium=cpc&utm_campaign=Shopping_DK%2BSupplier_Other&utm_term=&utm_content=Essen%20Deinki&gclid=Cj0KCQjw1N2TBhCOARIsAGVHQc5wzGDhJDlvyq4N77R9zlWtRVCpPK9Ajwizl2vyqLFRE6OX0z9Cs-8aAtAfEALw_wcB) was my solution (w/a powered antenna).
 
 I used a [Digilent Digital Discovery](https://digilent.com/shop/digital-discovery-portable-usb-logic-analyzer-and-digital-pattern-generator/) to verify the GPS receiver was healthy.
-
+1. GPS UART output
 ![GPS output](https://github.com/guycole/perky-janus/blob/main/grafix/uart_out2.png)
+1. GPS PPS output
 ![PPS output](https://github.com/guycole/perky-janus/blob/main/grafix/pps_out2.png)
 
 ### Install packages
@@ -51,6 +52,8 @@ The GPS receiver will write ASCII messages to BeagleBone UART1, and send a sync 
 
 1. Assuming gpsd(8) started, try your luck with cgps(1).
 ![resultsl](https://github.com/guycole/perky-janus/blob/main/grafix/cgps.png)
+1. gpsmon(1) will demonstrate you have pps working
+![resultsl](https://github.com/guycole/perky-janus/blob/main/grafix/gpsmon.png)
 
 #### pps
 1. For reasons, pps will require you to install a device overlay.
@@ -66,3 +69,15 @@ The GPS receiver will write ASCII messages to BeagleBone UART1, and send a sync 
 ### Configure Time Server
 
 Coming Soon
+
+### Relevant Lins
+[thread w/RCN](https://forum.beagleboard.org/t/beaglebone-black-gps-pps-and-chrony-for-time-sync/897/17)
+[overlays on elinux.org](https://elinux.org/Beagleboard:BeagleBoneBlack_Debian#U-Boot_Overlays)
+[pps on kernel.org](https://www.kernel.org/doc/html/latest/driver-api/pps.html)
+[gpsd time service howto](https://gpsd.gitlab.io/gpsd/gpsd-time-service-howto.html)
+[beaglebone-gps-clock](https://github.com/jrockway/beaglebone-gps-clock)
+[Dan Drown BBB as NTP/GPS](https://blog.dan.drown.org/beaglebone-black-ntpgps-server/)
+[toptechboy python](https://toptechboy.com/beaglebone-black-gps-tracker-lesson-3-parsing-the-nmea-sentences-in-python/)
+[small golden sceptre](https://mythopoeic.org/beaglebone-green-time-server/)
+[LinuxPPS Wiki](http://linuxpps.org/doku.php)
+
