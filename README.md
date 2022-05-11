@@ -77,13 +77,13 @@ For my application, there are not internet connected time servers to consult.  I
 ![ntpq](https://github.com/guycole/perky-janus/blob/main/grafix/ntpq.png)
 
 ### Relevant Links
-[thread w/RCN](https://forum.beagleboard.org/t/beaglebone-black-gps-pps-and-chrony-for-time-sync/897/17)
-[overlays on elinux.org](https://elinux.org/Beagleboard:BeagleBoneBlack_Debian#U-Boot_Overlays)
-[pps on kernel.org](https://www.kernel.org/doc/html/latest/driver-api/pps.html)
-[gpsd time service howto](https://gpsd.gitlab.io/gpsd/gpsd-time-service-howto.html)
-[beaglebone-gps-clock](https://github.com/jrockway/beaglebone-gps-clock)
-[Dan Drown BBB as NTP/GPS](https://blog.dan.drown.org/beaglebone-black-ntpgps-server/)
-[toptechboy python](https://toptechboy.com/beaglebone-black-gps-tracker-lesson-3-parsing-the-nmea-sentences-in-python/)
-[small golden sceptre](https://mythopoeic.org/beaglebone-green-time-server/)
-[LinuxPPS Wiki](http://linuxpps.org/doku.php)
+1. [thread w/RCN](https://forum.beagleboard.org/t/beaglebone-black-gps-pps-and-chrony-for-time-sync/897/17)
+1. [overlays on elinux.org](https://elinux.org/Beagleboard:BeagleBoneBlack_Debian#U-Boot_Overlays)
+1. [pps on kernel.org](https://www.kernel.org/doc/html/latest/driver-api/pps.html)
+1. [gpsd time service howto](https://gpsd.gitlab.io/gpsd/gpsd-time-service-howto.html)
+1. [beaglebone-gps-clock](https://github.com/jrockway/beaglebone-gps-clock)
+1. [Dan Drown BBB as NTP/GPS](https://blog.dan.drown.org/beaglebone-black-ntpgps-server/)
+1. [toptechboy python](https://toptechboy.com/beaglebone-black-gps-tracker-lesson-3-parsing-the-nmea-sentences-in-python/)
+1. [small golden sceptre](https://mythopoeic.org/beaglebone-green-time-server/)
+1. [LinuxPPS Wiki](http://linuxpps.org/doku.php)
 
