@@ -77,6 +77,7 @@ For my application, there are not internet connected time servers to consult.  I
 ![ntpq](https://github.com/guycole/perky-janus/blob/main/grafix/ntpq.png)
 
 ### Verify Results
+1. Remove external network connectivity
 1. Disable gpsd via systemctl ```systemctl stop gpsd.service```
 1. Set a bogus date ```date 042708002020```
 1. Restart gpsd ```systemctl restart gpsd.service```
