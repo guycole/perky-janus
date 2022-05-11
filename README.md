@@ -76,6 +76,12 @@ For my application, there are not internet connected time servers to consult.  I
 1. Verify ntpd(8) is reading via shared memory/PPS
 ![ntpq](https://github.com/guycole/perky-janus/blob/main/grafix/ntpq.png)
 
+### Verify Results
+1. Disable gpsd via systemctl ```systemctl stop gpsd.service```
+1. Set a bogus date ```date 042708002020```
+1. Restart gpsd ```systemctl restart gpsd.service```
+1. Observe the time eventually become current
+
 ### Relevant Links
 1. [thread w/RCN](https://forum.beagleboard.org/t/beaglebone-black-gps-pps-and-chrony-for-time-sync/897/17)
 1. [overlays on elinux.org](https://elinux.org/Beagleboard:BeagleBoneBlack_Debian#U-Boot_Overlays)
