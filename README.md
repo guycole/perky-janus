@@ -30,9 +30,9 @@ I used a [Digilent Digital Discovery](https://digilent.com/shop/digital-discover
 1. apt-get install gps
 1. apt-get install gpsd-clients
 1. apt-get install pps-tools
+1. apt-get install ntp
 
 ### Configure GPS and PPS
-
 The GPS receiver will write ASCII messages to BeagleBone UART1, and send a sync pulse to GPIO_60. gpsd(8) will readily accept the UART messages, but the pps driver will require some extra work.  
 
 #### Pins
@@ -69,8 +69,12 @@ The GPS receiver will write ASCII messages to BeagleBone UART1, and send a sync 
 ![resultsl](https://github.com/guycole/perky-janus/blob/main/grafix/ntpshmmon.png)
 
 ### Configure Time Server
-
-Coming Soon
+For my application, there are not internet connected time servers to consult.  I want time exclusively from the GPS receiver.
+1. Copy [ntpd.conf](https://github.com/guycole/perky-janus/blob/main/ntpd.conf) to /etc/default/ntpd.conf
+1. Restart ntpd(8) by invoking ```systemctl restart ntpd.service```
+1. Verify ntpd(8) by invoking ```systemctl status ntpd.service```
+1. Verify ntpd(8) is reading via shared memory/PPS
+![ntpq](https://github.com/guycole/perky-janus/blob/main/grafix/ntpq.png)
 
 ### Relevant Links
 [thread w/RCN](https://forum.beagleboard.org/t/beaglebone-black-gps-pps-and-chrony-for-time-sync/897/17)
